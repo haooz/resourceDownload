@@ -7,7 +7,8 @@ var File = {
     totalPages: 1,
     pageSize: 10,
     table_height: 277,
-    totalRows: 0
+    totalRows: 0,
+    height:682
 };
 
 /**
@@ -155,7 +156,7 @@ File.openAddFile = function () {
 $(function () {
     var defaultColunms = File.initColumn();
     var tableId = File.id;
-    var table = new BSTable(tableId, Feng.ctxPath +"/fileController/list", defaultColunms,File.pageSize);
+    var table = new BSTable(tableId, Feng.ctxPath +"/fileController/list", defaultColunms,File.pageSize,File.height);
     table.setPaginationType("client");
     table.options["showColumns"] = false;
     table.options["showRefresh"] = true;

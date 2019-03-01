@@ -7,6 +7,11 @@ spring:
     static-path-pattern: /**
   resources:
     static-locations: classpath:/templates/,classpath:/static/
+  devtools:
+      restart:
+        enabled: false #是否开启开发者工具（true/false）
+        additional-paths: src/main/java
+        exclude: static/**,WEB-INF/view/**
 
   # H2 DATABASE CONFIG
   datasource:

@@ -97,7 +97,6 @@ public class FileStorageController extends BaseController {
     public String downloadError() {
         return "/downloadError";
     }
-
     /**
      * 修改
      */
@@ -171,6 +170,10 @@ public class FileStorageController extends BaseController {
             String filePath=fileStorage.getPath();
             String name=fileStorage.getName();
             File file = new File(fileStorage.getPath());
+            if (!file.exists()){
+                response.sendRedirect("/fileController/download_error");
+                return;
+            }
             if (file.isFile() && file.exists()) {
                 String fileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1);//得到文件名
                 //String fileName ="abc.png";

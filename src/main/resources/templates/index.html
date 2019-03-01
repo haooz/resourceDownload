@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件列表</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/layer/theme/default/layer.css" rel="stylesheet">
+    <link href="/css/bootstrap-table.min.css" rel="stylesheet">
+    <script src="/bootstrap-editable/css/bootstrap-editable.css"></script>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/content.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/messages_zh.min.js"></script>
+    <script src="/js/bootstrapValidator.min.js"></script>
+    <script src="/js/zh_CN.js"></script>
+    <script src="/js/index/index_info.js"></script>
+    <script src="/js/index/index.js"></script>
+    <script src="/js/Feng.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script src="/js/ajax-object.js"></script>
+    <script src="/js/bootstrap-table-object.js"></script>
+    <script src="/js/bootstrap-table.js"></script>
+    <script src="/js/bootstrap-table-zh-CN.js"></script>
+    <script src="/bootstrap-editable/js/bootstrap-editable.js"></script>
+    <script src="/bootstrap-editable/js/bootstrap-table-editable.js"></script>
+    <style>
+        .ibox-content {
+            clear: none;
+        }
+        .ibox-content {
+            border-width: 0px 0px;
+        }
+    </style>
+
+</head>
+<body class="gray-bg">
+<!--<div class="row m-b-lg">
+    <div class="col-sm-12">
+        <div class="tabs-container">
+
+            <div class="tabs-left">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-9">文件列表</a>
+                    </li>
+                    <li class=""><a data-toggle="tab" href="#tab-8">录入文件路径</a>
+                    </li>
+                </ul>
+                <div class="tab-content ">
+                    <div id="tab-9" class="tab-pane active">
+                        <div class="panel-body">
+                            <table id="FileTable" data-mobile-responsive="true" data-click-to-select="true">
+                                <thead>
+                                <tr>
+                                    <th data-field="selectItem" data-checkbox="true"></th>
+                                </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div id="tab-8" class="tab-pane">
+                        <div class="panel-body">
+                            <div class="ibox-content">
+                                <form class="form-horizontal m-t" id="addPathForm">
+                                    <input type="hidden" id="id" value="">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">名称：</label>
+                                        <div class="col-sm-8">
+                                            <input id="name" name="name" class="form-control" type="text">
+                                            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 文件名称</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">位置：</label>
+                                        <div class="col-sm-8">
+                                            <input id="path" name="path" class="form-control" type="text" aria-required="true" aria-invalid="false" class="valid">
+                                            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 文件路径（如:D:\MyDownloads\Download）</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">用途：</label>
+                                        <div class="col-sm-8">
+                                            <input id="purpose" name="purpose" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">备注：</label>
+                                        <div class="col-sm-8">
+                                            <input id="remark" name="remark" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">是否提供下载：</label>
+                                        <div class="col-sm-8">
+                                            <select id="isOpen" name="isOpen" class="form-control">
+                                                <option value="0">提供</option>
+                                                <option value="1">不提供</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                            <button class="btn btn-primary" type="button" onclick="FileStorageInfo.addSubmit()">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>-->
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>文件列表</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row row-lg">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <button class="btn btn-block btn-sm excel-get " onclick="File.openAddFile()">录入文件</button>
+                                </div>
+                            </div>
+                            <table id="FileTable" data-mobile-responsive="true" data-click-to-select="true">
+                                <thead>
+                                <tr>
+                                    <th data-field="selectItem" data-checkbox="true"></th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>登陆页面</title>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/Feng.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/content.min.js"></script>
+    <script src="/layer/layer.js"></script>
+    <style>
+        body {
+            background-color: #EEEEE0;
+        }
+
+        .box {
+            text-align: center;
+            height: 350px;
+            margin-top: 10%;
+        }
+
+        .row {
+            margin-bottom: 30px;
+            height: 40px;
+        }
+
+        .row input {
+            width: 320px;
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 5px;
+            border: 1px solid #acacac;
+        }
+
+        .row button {
+            width: 352px;
+            height: 42px;
+            background-color: #409eff;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+        }
+
+        .row button:hover {
+            background-color: teal;
+            cursor: pointer;
+        }
+
+        .row button:active {
+            background-color: green;
+            cursor: pointer;
+        }
+
+        .lastrow {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .lastrow a {
+            text-decoration: none;
+            color: #409eff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="row">
+        <h1>登陆</h1>
+    </div>
+    <form id="login">
+    <div class="row">
+        <input id="account" type="text" placeholder="输入账号"/>
+    </div>
+    <div class="row">
+        <input id="password" type="password" placeholder="输入密码"/>
+    </div>
+    <div class="row">
+        <button id="loginbtn">登 陆</button>
+    </div>
+    </form>
+</div>
+</body>
+
+<script>
+    $(function () {
+
+        $("#loginbtn").on("click", function () {
+            var account = $("#account").val();
+            var password = $("#password").val();
+            if (account == "" || password == "") {
+                Feng.error("请输入用户名、密码!");
+                return;
+            }
+            //提交表单
+            $.ajax({
+                url: "/admin/doLogin",
+                type: "post",
+                dataType: "json",
+                data: {
+                    userName: account,
+                    passWord: password
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.status == 200) {
+                        window.location.href = "/admin/index";
+                    } else {
+                        Feng.error(result.message);
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+</html>

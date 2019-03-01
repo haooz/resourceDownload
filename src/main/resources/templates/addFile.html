@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/layer/theme/default/layer.css" rel="stylesheet">
+    <link href="/css/bootstrap-table.min.css" rel="stylesheet">
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/content.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/messages_zh.min.js"></script>
+    <script src="/js/bootstrapValidator.min.js"></script>
+    <script src="/js/zh_CN.js"></script>
+    <script src="/js/index/index_info.js"></script>
+    <script src="/js/index/index.js"></script>
+    <script src="/js/Feng.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script src="/js/ajax-object.js"></script>
+    <script src="/js/bootstrap-table-object.js"></script>
+    <script src="/js/bootstrap-table.js"></script>
+    <script src="/js/bootstrap-table-zh-CN.js"></script>
+    <style>
+        .ibox-content {
+            clear: none;
+        }
+        .ibox-content {
+            border-width: 0px 0px;
+        }
+    </style>
+
+</head>
+<body class="gray-bg">
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="addPathForm">
+            <div class="row">
+                <input type="hidden" id="id" value="">
+                <!--<div class="form-group">
+                    <label class="col-sm-3 control-label">文件是否存在：</label>
+                    <div class="col-sm-8">
+                        <select id="isExists" name="isExists" class="form-control" style="width: 20%">
+                            <option value="0">存在</option>
+                            <option value="1">不存在</option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">名称：</label>
+                    <div class="col-sm-8">
+                        <input id="name" name="name" class="form-control" type="text">
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 文件名称</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">位置：</label>
+                    <div class="col-sm-8">
+                        <input id="path" name="path" class="form-control" type="text" aria-required="true" aria-invalid="false" class="valid">
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 文件路径（如:D:\MyDownloads\Download\a.png）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">用途：</label>
+                    <div class="col-sm-8">
+                        <input id="purpose" name="purpose" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">备注：</label>
+                    <div class="col-sm-8">
+                        <input id="remark" name="remark" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">是否提供下载：</label>
+                    <div class="col-sm-8">
+                        <select id="isOpen" name="isOpen" class="form-control" style="width: 20%">
+                            <option value="0">提供</option>
+                            <option value="1">不提供</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-3">
+                        <button class="btn btn-primary" type="button" onclick="FileStorageInfo.addSubmit()">提交</button>
+                        <button class="btn btn-primary" type="button" onclick="FileStorageInfo.close()"/>取消</button>
+                    </div>
+                </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
+</body>

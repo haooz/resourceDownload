@@ -28,7 +28,8 @@ import java.util.Map;
 public class FileStorageController extends BaseController {
     @Autowired
     private IFileStorageService fileStorageService;
-    public static final Logger logger= LoggerFactory.getLogger(ZipUtils.class);
+
+    public static final Logger logger= LoggerFactory.getLogger(FileStorageController.class);
 
     /**
      * 录入文件路径
@@ -193,7 +194,6 @@ public class FileStorageController extends BaseController {
                 out.close();
                 logger.info("下载成功! 文件编号："+fileId);
             }else if(file.isDirectory() && file.exists()){
-                System.out.println(name);
                 name = new String(name.getBytes("UTF-8"), "ISO8859-1");
                 response.setContentType("application/zip");
                 response.setHeader("Content-Disposition", "attachment; filename="+name+".zip");

@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  profiles:
+    active: dev
   mvc:
     view:
       suffix: .html
@@ -64,3 +66,23 @@ logging:
     console: "%d - %msg%n"
   path: logs/
   file: file.log
+
+
+---
+
+spring:
+  profiles: dev
+  description: dev
+---
+
+spring:
+  profiles: test
+  description: test
+
+---
+
+spring:
+  profiles: produce
+  description: produce
+
+

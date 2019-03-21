@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Component
+//@Component
 public class LoginInterceptor implements HandlerInterceptor {
     public static final Logger logger= LoggerFactory.getLogger(ZipUtils.class);
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

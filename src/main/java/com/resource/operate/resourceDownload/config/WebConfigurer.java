@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-@Configuration
+//@Configuration
 public class WebConfigurer implements WebMvcConfigurer  {
     @Autowired
     private LoginInterceptor loginInterceptor;
